@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/thomaspark/bootswatch/v4/flatly/bootstrap.min.css" integrity="sha384-mLoAoVVKI5Ylfekhi0wRovakSfJXZJd/4G/hFADK5cB5L6R2JYjur4rRdGS9czwd" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body ng-app="myApp">
+    
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+  <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+  iSched</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#!/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#!/login">Login</a>
+      <a class="nav-item nav-link" href="#!/register">Register</a>
+      <a class="nav-item nav-link disabled" href="#">Dashboard</a>
+    </div>
+  </div>
+</nav>
+    
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">Copyrights All Rights Reserved iSched 2017</p>
+        </div>
+    </div>
+<!-- Scripts -->
+    <!-- 3rd party libs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js"></script>
+    <!-- Load services -->
+    <!-- Load controllers -->
+    <script src="app/controllers/mainController.js"></script>    
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/registerController.js"></script>
+    <script src="app/controllers/dashboardController.js"></script>
+</body>
+</html>
