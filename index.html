@@ -9,7 +9,7 @@
 </head>
 <body ng-app="myApp">
     
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" ng-controller="indexController">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,11 +19,13 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#!/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#!/login">Login</a>
-      <a class="nav-item nav-link" href="#!/register">Register</a>
-      <a class="nav-item nav-link disabled" href="#">Dashboard</a>
+      <a class="nav-item nav-link" href="#!/login" ng-hide="authentication.isAuth">Login</a>
+      <a class="nav-item nav-link" href="" ng-click="logOut()" ng-hide="!authentication.isAuth">Logout</a>
+      <a class="nav-item nav-link" href="#!/register" ng-hide="authentication.isAuth">Register</a>
+      <a class="nav-item nav-link" href="" ng-hide="!authentication.isAuth">Dashboard</a>
     </div>
   </div>
+  <span class="navbar-text mr-5" ng-hide="!authentication.isAuth">Welcome {{authentication.userName}}</span>
 </nav>
     
     <div class="container">
@@ -48,6 +50,7 @@
     <script src="app/services/authInterceptorService.js"></script>
     <script src="app/services/authService.js"></script>
     <!-- Load controllers -->
+    <script src="app/controllers/indexController.js"></script>
     <script src="app/controllers/mainController.js"></script>    
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/registerController.js"></script>
