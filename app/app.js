@@ -1,6 +1,6 @@
 (function() {
     
-    var app = angular.module("myApp", ['ngRoute']);
+    var app = angular.module("myApp", ['ngRoute', 'LocalStorageModule']);
     
     function router($routeProvider) {
         
@@ -20,10 +20,17 @@
         .when("/dashboard", {
             templateUrl : "app/views/dashboard.html",
             controller : "dashboardController"
-        });
+        }).otherwise({ redirectTo: "/"});
     }
     
     
-    app.config(['$routeProvider', router]);
+    app.config(['$routeProvider', router, function($httpProvider) {
+        $httpProvider.interceptors.push('authInterceptorService');
+    }]);
+    
+    app.run(['authService', function (authService) {
+        authService.fillAuthData();
+    }]);
+    
     
 }());
