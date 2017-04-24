@@ -32,7 +32,9 @@
         var deferred = $q.defer();
 
         $http.post(serviceBase + 'token', data, { headers: 
-        { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+        { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(onSuccess, onError);
+            
+        var onSuccess = function (response) {
 
             localStorageService.set('authorizationData', 
             { token: response.access_token, userName: loginData.userName });
@@ -41,11 +43,12 @@
             _authentication.userName = loginData.userName;
 
             deferred.resolve(response);
+        };
 
-        }).error(function (err, status) {
+        var onError = function (err, status) {
             _logOut();
             deferred.reject(err);
-        });
+        };
 
         return deferred.promise; 
     };
