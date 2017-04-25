@@ -1,4 +1,13 @@
-Dashboard page
-
-
-<p>{{message}}</p>
+<div ng-controller="dashboardController">
+		<ej-schedule id="Schedule1" e-width="100%" e-height="525px" e-currentview="currentView" e-currentdate="Date"
+            e-appointmentsettings-datasource="appointments" 
+			e-appointmentsettings-id="Id" 
+			e-appointmentsettings-subject="Subject" 
+			e-appointmentsettings-starttime="StartTime"
+			e-appointmentsettings-endtime="EndTime" 
+			e-appointmentsettings-description="Comments" 
+			e-appointmentsettings-allday="AllDay" 
+			e-appointmentsettings-recurrence="Recurrence" 
+			e-appointmentsettings-recurrencerule="RecurrenceRule">
+	    </ej-schedule>
+	</div>
