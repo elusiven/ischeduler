@@ -19,7 +19,8 @@
         })
         .when("/dashboard", {
             templateUrl : "app/views/dashboard.html",
-            controller : "dashboardController"
+            controller : "dashboardController",
+            requireAuth: true
         }).otherwise({ redirectTo: "/"});
     }
     
