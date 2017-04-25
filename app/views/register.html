@@ -26,7 +26,14 @@
                 <input type="submit" value="Create New Account" class="btn btn-primary"/>
             </div>
             <div ng-hide="message == ''" ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
-                {{message}}
+               <div ng-if="savedSuccessfully == false">
+                    <div  ng-repeat="error in message">
+                    <li>{{error}}</li>
+                    </div>
+               </div>
+                <div ng-if="savedSuccessfully == true">
+                    {{message}}
+                </div>
             </div>
         </form>
     </div>
