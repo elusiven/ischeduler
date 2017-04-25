@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>iScheduler - Calendar Management App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.rawgit.com/thomaspark/bootswatch/v4/flatly/bootstrap.min.css" integrity="sha384-mLoAoVVKI5Ylfekhi0wRovakSfJXZJd/4G/hFADK5cB5L6R2JYjur4rRdGS9czwd" crossorigin="anonymous">
     <link rel="stylesheet" href="css/site.css">
@@ -17,20 +17,18 @@
   <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
   iSched</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link active" href="#!/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#!/login" ng-hide="authentication.isAuth">Login</a>
-      <a class="nav-item nav-link" href="" ng-click="logOut()" ng-hide="!authentication.isAuth">Logout</a>
-      <a class="nav-item nav-link" href="#!/register" ng-hide="authentication.isAuth">Register</a>
       <a class="nav-item nav-link" href="#!/dashboard" ng-hide="!authentication.isAuth">Dashboard</a>
+      <a class="nav-item nav-link" href="" ng-click="logOut()" ng-hide="!authentication.isAuth">Logout</a>
+      <a class="nav-item nav-link" href="#!/register" ng-hide="authentication.isAuth">Register</a>    
     </div>
+    <span class="navbar-text mr-5" ng-hide="!authentication.isAuth">Welcome {{authentication.userName}}!</span>
   </div>
-  <span class="navbar-text mr-5" ng-hide="!authentication.isAuth">Welcome {{authentication.userName}}</span>
 </nav>
     
-    <div class="container">
-        <ng-view></ng-view>
-    </div>
+    <ng-view></ng-view>
 
     <div id="footer">
         <div class="container">
