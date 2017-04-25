@@ -1,6 +1,6 @@
 (function() {
     
-    var app = angular.module("myApp", ['ngRoute', 'LocalStorageModule']);
+    var app = angular.module("myApp", ['ngRoute', 'LocalStorageModule', 'ejangular']);
     
     function router($routeProvider) {
         
