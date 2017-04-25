@@ -22,7 +22,7 @@
       <a class="nav-item nav-link" href="#!/login" ng-hide="authentication.isAuth">Login</a>
       <a class="nav-item nav-link" href="" ng-click="logOut()" ng-hide="!authentication.isAuth">Logout</a>
       <a class="nav-item nav-link" href="#!/register" ng-hide="authentication.isAuth">Register</a>
-      <a class="nav-item nav-link" href="" ng-hide="!authentication.isAuth">Dashboard</a>
+      <a class="nav-item nav-link" href="#!/dashboard" ng-hide="!authentication.isAuth">Dashboard</a>
     </div>
   </div>
   <span class="navbar-text mr-5" ng-hide="!authentication.isAuth">Welcome {{authentication.userName}}</span>

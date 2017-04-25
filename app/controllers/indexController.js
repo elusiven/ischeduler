@@ -9,6 +9,14 @@
         }
         
         $scope.authentication = authService.authentication;
-    }])
+        
+        $scope.$on('$routeChangeStart', function(angularEvent, newUrl, authService) {
+            if (newUrl.requireAuth == true && $scope.authentication.isAuth == false) {
+                // user is not authenticated, redirect him!
+                $location.path("/login");
+            };
+        });
+        
+    }]);
     
 }());
