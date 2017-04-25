@@ -20,6 +20,10 @@
         
     $scope.appointments = appointmentsCollection;
         
+    function onAppointmentSave(args) {
+        console.log("appointment was saved");
+    };
+        
     }]);
     
 }());
