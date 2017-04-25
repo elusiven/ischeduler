@@ -7,7 +7,7 @@
     app.factory('authService', ['$http', '$q', 
                 'localStorageService', function ($http, $q, localStorageService) {
 
-    var serviceBase = 'http://ngauthenticationapi.azurewebsites.net/';
+    var serviceBase = 'http://localhost:63185/api/identity/';
     var authServiceFactory = {};
 
     var _authentication = {
@@ -19,20 +19,28 @@
 
         _logOut();
 
-        return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
+        return $http.post(serviceBase + 'create', registration).then(function (response) {
             return response;
         });
     };
 
     var _login = function (loginData) {
 
-        var data = "grant_type=password&username=" + 
-        loginData.userName + "&password=" + loginData.password;
+        //var data = "grant_type=password&userName=" + 
+        //loginData.userName + "&password=" + loginData.password;
+        
+        var loginDat = {
+            "username": loginData.userName,
+            "password": loginData.password
+        };
+
+        var data = angular.toJson(loginDat);
+        
+        console.log(data);
 
         var deferred = $q.defer();
-
-        $http.post(serviceBase + 'token', data, { headers: 
-        { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function successCallback(response) {
+        
+        $http.post(serviceBase + 'token', data, {headers:{ 'Content-Type': 'application/json'}}).then(function successCallback(response) {
             
             localStorageService.set('authorizationData', 
             { token: response.access_token, userName: loginData.userName });
@@ -46,7 +54,7 @@
             _logOut();
             deferred.reject(err);
           });
-
+        
         return deferred.promise; 
     };
 

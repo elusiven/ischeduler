@@ -16,7 +16,8 @@
                 $location.path('/dashboard');
             },
             function (err) {
-                $scope.message = err.data.error_description;
+                $scope.message = err.data;
+                console.log(err.data);
             });
         };
     }]);
