@@ -1,13 +1,13 @@
 <div ng-controller="dashboardController">
-		<ej-schedule id="Schedule1" e-width="100%" e-height="525px" e-currentview="currentView" e-currentdate="Date"
+		<ej-schedule id="Schedule1" e-width="100%" e-height="525px" e-currentview="currentView" e-currentdate="Date" e-enableloadondemand="true"
             e-appointmentsettings-datasource="appointments" 
-			e-appointmentsettings-id="Id" 
-			e-appointmentsettings-subject="Subject" 
-			e-appointmentsettings-starttime="StartTime"
-			e-appointmentsettings-endtime="EndTime" 
-			e-appointmentsettings-description="Comments" 
-			e-appointmentsettings-allday="AllDay" 
-			e-appointmentsettings-recurrence="Recurrence" 
-			e-appointmentsettings-recurrencerule="RecurrenceRule">
+			e-appointmentsettings-id="id" 
+			e-appointmentsettings-subject="name" 
+			e-appointmentsettings-starttime="startTime"
+			e-appointmentsettings-endtime="endTime" 
+			e-appointmentsettings-description="comments" 
+			e-appointmentsettings-allday="isAllDay" 
+			e-appointmentsettings-recurrence="isRecurrence" 
+			e-appointmentsettings-recurrencerule="recurrenceRule">
 	    </ej-schedule>
 	</div>
