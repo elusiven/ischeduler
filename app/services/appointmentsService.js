@@ -6,7 +6,7 @@
     
     app.factory('appointmentsService', ['$http', function($http) {
         
-        var serviceBase = 'http://localhost:63185/';
+        var serviceBase = 'http://ischedwebapi.azurewebsites.net/';
         var appointmentsServiceFactory = {};
         
         var _getAppointments = function () {

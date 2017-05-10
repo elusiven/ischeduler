@@ -7,7 +7,7 @@
     app.factory('authService', ['$http', '$q', 
                 'localStorageService', function ($http, $q, localStorageService) {
 
-    var serviceBase = 'http://localhost:63185/api/identity/';
+    var serviceBase = 'http://ischedwebapi.azurewebsites.net/api/identity/';
     var authServiceFactory = {};
 
     var _authentication = {
