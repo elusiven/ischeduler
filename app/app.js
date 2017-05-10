@@ -25,7 +25,7 @@
     }
     
     
-    app.config(['$routeProvider', router, ]);
+    app.config(['$routeProvider', router]);
     
     app.config(function($httpProvider) {
         $httpProvider.interceptors.push('authInterceptorService');

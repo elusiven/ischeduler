@@ -26,9 +26,6 @@
 
     var _login = function (loginData) {
 
-        //var data = "grant_type=password&userName=" + 
-        //loginData.userName + "&password=" + loginData.password;
-        
         var loginDat = {
             "username": loginData.userName,
             "password": loginData.password
@@ -43,7 +40,7 @@
         $http.post(serviceBase + 'token', data, {headers:{ 'Content-Type': 'application/json'}}).then(function successCallback(response) {
             
             localStorageService.set('authorizationData', 
-            { token: response.access_token, userName: loginData.userName });
+            { token: response.data.token, userName: loginData.userName });
 
             _authentication.isAuth = true;
             _authentication.userName = loginData.userName;
